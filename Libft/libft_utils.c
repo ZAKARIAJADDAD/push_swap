@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_errors.c                                        :+:      :+:    :+:   */
+/*   libft_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 22:42:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 22:50:15 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/01/22 02:21:49 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/22 02:22:03 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	param_error(void)
+char	*ft_strdup(const char *s1)
 {
-	write(2, "Error: Invalid Input.", 22);
-	exit(1);
-}
-
-void	check_param(char **av, t_list **stk_a)
-{
+	char	*plloc;
 	int		i;
-	int		j;
-	char	**splt;
 
-	i = 1;
-	while (av[i])
+	i = 0;
+	plloc = malloc(ft_strlen(s1) + 1);
+	if (!plloc)
+		return (NULL);
+	while (s1[i])
 	{
-		j = 0;
-		splt = ft_split(av[i], ' ');
-		while (splt[j])
-		{
-			ft_lstadd_back(&(*stk_a), ft_lstnew(ft_atoi(splt[j])));
-			j++;
-		}
-		free(splt);
+		plloc[i] = s1[i];
 		i++;
 	}
+	plloc[i] = '\0';
+	return (plloc);
 }

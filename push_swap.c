@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 23:05:38 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 01:20:16 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/22 22:54:23 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@ int	main(int ac, char **av)
 
 	if (ac <= 1)
 		param_error();
-	check_param(av);
-	stack_a = ft_lstnew(ft_atoi(av[1]));
-	ft_lstsize(stack_a);
+	check_param(av, &stack_a);
 }
