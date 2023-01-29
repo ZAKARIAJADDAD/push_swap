@@ -23,6 +23,7 @@ void	check_param(char **av, t_list **stk_a)
 	int		i;
 	int		j;
 	char	**splt;
+	t_list	*tmp;
 
 	i = 1;
 	while (av[i])
@@ -31,6 +32,13 @@ void	check_param(char **av, t_list **stk_a)
 		splt = ft_split(av[i], ' ');
 		while (splt[j])
 		{
+			tmp = *stk_a;
+			while (tmp)
+			{
+				if (tmp->data == ft_atoi(splt[j]))
+					param_error();
+				tmp = tmp->next;
+			}
 			ft_lstadd_back(&(*stk_a), ft_lstnew(ft_atoi(splt[j])));
 			j++;
 		}

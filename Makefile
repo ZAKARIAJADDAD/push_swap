@@ -14,7 +14,8 @@ CC= cc
 CFLAGS= -Wall -Wextra -Werror
 AR= ar -rc
 
-SRCS= push_swap.c ft_errors.c ft_lst.c Libft/ft_atoi.c  Libft/ft_split.c\
+SRCS= push_swap.c ft_errors.c ft_lst.c swap_a.c swap_b.c rotate_a.c rotate_b.c\
+	Libft/ft_atoi.c  Libft/ft_split.c rev_rotate_a.c rev_rotate_b.c push_a.c push_b.c\
 	 Libft/ft_substr.c  Libft/ft_strlen.c Libft/libft_utils.c
 
 NAME=push_swap

@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   swap_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 15:06:20 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 02:05:14 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/01/27 00:32:58 by marvin            #+#    #+#             */
+/*   Updated: 2023/01/27 00:32:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-size_t	ft_strlen(const char *s)
+void	swap_b(t_list **head_b)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	t_list	*tmp;
+	if (*head_b == NULL || (*head_b)->next == NULL)
+		return;
+	tmp = (*head_b)->next;
+	(*head_b)->next = tmp->next;
+	tmp->next = *head_b;
+	*head_b = tmp;
 }
