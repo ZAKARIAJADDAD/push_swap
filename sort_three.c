@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_utils.c                                      :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 02:21:49 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 02:22:03 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/01/30 16:38:16 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/30 17:33:19 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-char	*ft_strdup(const char *s1)
+void	sort_three(t_list **stack_a)
 {
-	char	*plloc;
-	int		i;
-
-	i = 0;
-	plloc = malloc(ft_strlen(s1) + 1);
-	if (!plloc)
-		return (NULL);
-	while (s1[i])
-	{
-		plloc[i] = s1[i];
-		i++;
-	}
-	plloc[i] = '\0';
-	return (plloc);
+	t_list		*tmp;
+	check_prams	val;
+	
+	tmp = (*stack_a)->next;
+	val.frst_thr = (*stack_a)->data;
+	val.snd_thr = tmp->data;
+	if(ft_lstsize(*stack_a) == 2 && val.frst_thr > val.snd_thr)
+		swap_a(&(*stack_a));
 }

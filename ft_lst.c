@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 00:09:29 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 00:12:45 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:28:36 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ int ft_lstsize(t_list *lst)
 	i = 0;
 	if (lst)
 	{
-		lent = malloc(sizeof(t_list));
-		if (!lent)
-			return (0);
 		lent = lst;
 		while (lent)
 		{

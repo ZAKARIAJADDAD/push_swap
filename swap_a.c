@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stacks.c                                           :+:      :+:    :+:   */
+/*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 00:22:36 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 00:23:19 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/01/29 22:25:38 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/30 16:15:09 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	swap_a(t_list **head_a)
     (*head_a)->next = tmp->next;
     tmp->next = *head_a;
     *head_a = tmp;
+	write(1, "sa\n", 4);
 }
 
 void	ss(t_list **head_a, t_list **head_b)
@@ -30,4 +31,5 @@ void	ss(t_list **head_a, t_list **head_b)
 		return;
 	swap_a(&(*head_a));
 	swap_b(&(*head_b));
+	write(1, "ss\n", 4);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 01:23:04 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/28 01:23:04 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/29 22:25:23 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/30 16:14:53 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	rotate_b(t_list **head_b)
 	*head_b = (*head_b)->next;
 	last_node->next = tmp;
 	tmp->next = NULL;
+	write(1, "rb\n", 4);
 }

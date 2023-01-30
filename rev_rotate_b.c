@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 01:49:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/29 01:49:42 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/29 22:24:30 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/30 16:13:04 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	rev_rotate_b(t_list **head_b)
 	snd_last_node = ft_second_lstlast(*head_b);
 	*head_b = snd_last_node->next;
 	snd_last_node->next = NULL;
-	(*head_b)->next = tmp; 
+	(*head_b)->next = tmp;
+	write(1, "rrb\n", 5);
 }
 
 void	rrr(t_list **head_a, t_list **head_b)
@@ -33,4 +34,5 @@ void	rrr(t_list **head_a, t_list **head_b)
 		return;
 	rev_rotate_a(&(*head_a));
 	rev_rotate_a(&(*head_b));
+	write(1, "rrr\n", 5);
 }

@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:03:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 22:37:25 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 16:49:24 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ typedef struct data
 {
 	int	i;
 	int	j;
-}	data;
+	int	frst_thr;
+	int	snd_thr;
+	int	trd_thr;
+}	check_prams;
 
 
 typedef	struct push_swap
@@ -51,6 +54,7 @@ void	rev_rotate_b(t_list **head_b);
 void	ss(t_list **head_a, t_list **head_b);
 void	rr(t_list **head_a, t_list **head_b);
 void	rrr(t_list **head_a, t_list **head_b);
+void	sort_three(t_list **stack_a);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *s);
 char	**ft_split(char const *s, char c);

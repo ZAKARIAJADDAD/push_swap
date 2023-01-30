@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 02:03:57 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/29 02:03:57 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/29 22:21:24 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/30 16:10:58 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	push_a(t_list **head_a, t_list **head_b)
 		*head_a = *head_b;
 	}
 	*head_b = tmp;
+	write(1, "pa\n", 4);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 00:32:58 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/27 00:32:58 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/29 22:25:46 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/30 16:15:21 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void	swap_b(t_list **head_b)
 	(*head_b)->next = tmp->next;
 	tmp->next = *head_b;
 	*head_b = tmp;
+	write(1, "sb\n", 4);
 }

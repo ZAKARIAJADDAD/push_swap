@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_a.c                                           :+:      :+:    :+:   */
+/*   rotate_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 00:01:33 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/28 00:01:33 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/29 22:25:14 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/01/30 16:14:08 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	rotate_a(t_list **head_a)
 	*head_a = (*head_a)->next;
 	last_node->next = tmp;
 	tmp->next = NULL;
+	write(1, "ra\n", 4);
 }
 
 void	rr(t_list **head_a, t_list **head_b)
@@ -33,4 +34,5 @@ void	rr(t_list **head_a, t_list **head_b)
 		return;
 	rotate_a(&(*head_a));
 	rotate_b(&(*head_b));
+	write(1, "rr\n", 4);
 }

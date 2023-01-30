@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:42:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 22:50:15 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 16:36:41 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,37 @@ void	param_error(void)
 	exit(1);
 }
 
+void	empty_str(char *s)
+{
+	if (!s)
+		param_error();
+}
+
 void	check_param(char **av, t_list **stk_a)
 {
-	int		i;
-	int		j;
+	check_prams dt;
 	char	**splt;
 	t_list	*tmp;
 
-	i = 1;
-	while (av[i])
+	dt.i = 1;
+	while (av[dt.i])
 	{
-		j = 0;
-		splt = ft_split(av[i], ' ');
-		while (splt[j])
+		dt.j = 0;
+		splt = ft_split(av[dt.i], ' ');
+		empty_str(splt[0]);
+		while (splt[dt.j])
 		{
 			tmp = *stk_a;
 			while (tmp)
 			{
-				if (tmp->data == ft_atoi(splt[j]))
+				if (tmp->data == ft_atoi(splt[dt.j]))
 					param_error();
 				tmp = tmp->next;
 			}
-			ft_lstadd_back(&(*stk_a), ft_lstnew(ft_atoi(splt[j])));
-			j++;
+			ft_lstadd_back(&(*stk_a), ft_lstnew(ft_atoi(splt[dt.j])));
+			dt.j++;
 		}
 		free(splt);
-		i++;
+		dt.i++;
 	}
 }
