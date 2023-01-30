@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 00:44:42 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 14:29:52 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:56:35 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,29 @@
 
 int	ft_atoi(const char *s)
 {
-	int					i;
-	unsigned long long	result;
-	int					sign;
+	ati	var;
 
-	i = 0;
-	result = 0;
-	sign = 1;
-	while ((s[i] == ' ' || (s[i] >= 9 && s[i] <= 13)))
-		i++;
-	if (s[i] == '+' || s[i] == '-')
+	var.i = 0;
+	var.result = 0;
+	var.sign = 1;
+	while ((s[var.i] == ' ' || (s[var.i] >= 9 && s[var.i] <= 13)))
+		var.i++;
+	if (s[var.i] == '+' || s[var.i] == '-')
 	{
-		if (s[i] == '-')
-			sign = -1;
-		i++;
+		if (s[var.i] == '-')
+			var.sign = -1;
+		var.i++;
 	}
-	while (s[i])
+	while (s[var.i])
 	{
-		if (s[i] < '0' || s[i] > '9')
+		if (s[var.i] < '0' || s[var.i] > '9')
 			param_error();
-		result = result * 10 + (s[i] - 48);
-		i++;
+		var.result = var.result * 10 + (s[var.i] - 48);
+		var.i++;
 	}
-	if (result > INT_MAX && sign == 1)
+	if (var.result > INT_MAX && var.sign == 1)
 		param_error();
-	if (result > 2147483648 && sign == -1)
+	if (var.result > 2147483648 && var.sign == -1)
 		param_error();
-	return (result * sign);
+	return (var.result * var.sign);
 }

@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:24:30 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 16:13:04 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:46:58 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rev_rotate_b(t_list **head_b)
 	t_list	*snd_last_node;
 
 	if (*head_b == NULL || (*head_b)->next == NULL)
-		return;
+		return ;
 	tmp = *head_b;
 	snd_last_node = ft_second_lstlast(*head_b);
 	*head_b = snd_last_node->next;
@@ -31,7 +31,7 @@ void	rrr(t_list **head_a, t_list **head_b)
 {
 	if ((*head_b == NULL || (*head_b)->next == NULL)
 		&& (*head_a == NULL || (*head_a)->next == NULL))
-		return;
+		return ;
 	rev_rotate_a(&(*head_a));
 	rev_rotate_a(&(*head_b));
 	write(1, "rrr\n", 5);

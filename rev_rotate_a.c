@@ -6,13 +6,13 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:24:21 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 16:12:15 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:46:36 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *ft_second_lstlast(t_list *lst)
+t_list	*ft_second_lstlast(t_list *lst)
 {
 	t_list	*last;
 
@@ -32,7 +32,7 @@ void	rev_rotate_a(t_list **head_a)
 	t_list	*snd_last_node;
 
 	if (*head_a == NULL || (*head_a)->next == NULL)
-		return;
+		return ;
 	tmp = *head_a;
 	snd_last_node = ft_second_lstlast(*head_a);
 	*head_a = snd_last_node->next;

@@ -6,16 +6,17 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 00:09:29 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 17:28:36 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:42:22 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *ft_lstnew(int nb)
+t_list	*ft_lstnew(int nb)
 {
-	t_list	*p = NULL;
-	
+	t_list	*p;
+
+	p = NULL;
 	p = malloc(sizeof(t_list));
 	if (p == NULL)
 		return (NULL);
@@ -24,7 +25,7 @@ t_list *ft_lstnew(int nb)
 	return (p);
 }
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	t_list	*lent;
 	int		i;
@@ -42,7 +43,7 @@ int ft_lstsize(t_list *lst)
 	return (i);
 }
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*last;
 
@@ -56,7 +57,7 @@ t_list *ft_lstlast(t_list *lst)
 	return (last);
 }
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst)
 	{
@@ -68,14 +69,14 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last;
+	t_list	*last;
 
 	if (!lst || !(*lst))
 	{
 		*lst = new;
-		return;
+		return ;
 	}
 	last = ft_lstlast(*lst);
 	if (last)

@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:03:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 16:49:24 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 18:56:35 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,21 @@
 # include<stdlib.h>
 # include<limits.h>
 
+typedef struct atoi
+{
+	int					i;
+	unsigned long long	result;
+	int					sign;
+
+}	ati;
+
 typedef struct data
 {
 	int	i;
 	int	j;
-	int	frst_thr;
-	int	snd_thr;
-	int	trd_thr;
+	int	frst;
+	int	snd;
+	int	trd;
 }	check_prams;
 
 

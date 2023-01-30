@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:25:46 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 16:15:21 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:51:14 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void	swap_b(t_list **head_b)
 {
 	t_list	*tmp;
+
 	if (*head_b == NULL || (*head_b)->next == NULL)
-		return;
+		return ;
 	tmp = (*head_b)->next;
 	(*head_b)->next = tmp->next;
 	tmp->next = *head_b;

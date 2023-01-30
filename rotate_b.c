@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:25:23 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 16:14:53 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:49:00 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	rotate_b(t_list **head_b)
 	t_list	*tmp;
 	t_list	*last_node;
 
-	if(*head_b == NULL || (*head_b)->next == NULL)
-        return;
+	if (*head_b == NULL || (*head_b)->next == NULL)
+		return ;
 	tmp = *head_b;
 	last_node = ft_lstlast(tmp);
 	*head_b = (*head_b)->next;

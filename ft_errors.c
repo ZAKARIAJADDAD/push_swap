@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:42:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 16:36:41 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/30 17:40:33 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	empty_str(char *s)
 
 void	check_param(char **av, t_list **stk_a)
 {
-	check_prams dt;
-	char	**splt;
-	t_list	*tmp;
+	check_prams	dt;
+	char		**splt;
+	t_list		*tmp;
 
 	dt.i = 1;
 	while (av[dt.i])
