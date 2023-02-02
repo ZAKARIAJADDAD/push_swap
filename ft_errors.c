@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:42:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 17:40:33 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/01 23:17:04 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ void	empty_str(char *s)
 {
 	if (!s)
 		param_error();
+}
+
+void ft_free(char **tmp)
+{
+	int i = 0;
+	while (tmp[i])
+	{
+		free(tmp[i]);
+		i++;
+	}
+	free(tmp);
 }
 
 void	check_param(char **av, t_list **stk_a)
@@ -48,7 +59,7 @@ void	check_param(char **av, t_list **stk_a)
 			ft_lstadd_back(&(*stk_a), ft_lstnew(ft_atoi(splt[dt.j])));
 			dt.j++;
 		}
-		free(splt);
+		ft_free(splt);
 		dt.i++;
 	}
 }

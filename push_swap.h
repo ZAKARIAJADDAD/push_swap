@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:03:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 18:56:35 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/02 00:58:36 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ss(t_list **head_a, t_list **head_b);
 void	rr(t_list **head_a, t_list **head_b);
 void	rrr(t_list **head_a, t_list **head_b);
 void	sort_three(t_list **stack_a);
+void	sort_five(t_list **stack_a, t_list **stack_b);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *s);
 char	**ft_split(char const *s, char c);
