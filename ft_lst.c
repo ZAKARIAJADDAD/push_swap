@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 00:09:29 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 17:42:22 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/03 06:13:29 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,21 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = ft_lstlast(*lst);
 	if (last)
 		last->next = new;
+}
+
+void	ft_lstclear(t_list **lst)
+{
+	t_list	*ptr;
+	t_list	*p;
+
+	if (lst == NULL)
+		return ;
+	ptr = *lst;
+	while (ptr != NULL)
+	{
+		p = ptr->next;
+		free(ptr);
+		ptr = p;
+	}
+	*lst = NULL;
 }
