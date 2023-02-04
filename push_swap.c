@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 23:05:38 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/03 06:33:37 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/04 02:32:36 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char **av)
 	if (ac > 1)
 	{
 		check_param(av, &stack_a);
-		//quick_sort(&stack_a);
 		if (ft_lstsize(stack_a) == 1)
 		{
 			ft_printf("%d", stack_a->data);
@@ -30,13 +29,15 @@ int	main(int ac, char **av)
 			sort_three(&stack_a);
 		else if (ft_lstsize(stack_a) <= 5)
 			sort_five(&stack_a, &stack_b);
+		idx_stack_value(&stack_a);
 		ft_printf("**********{----}**********\n");
 		while (stack_a)
 		{
-			ft_printf("%d ", stack_a->data);
+			ft_printf("%d --------> %d\n", stack_a->data, stack_a->idx);
 			free(stack_a);
 			stack_a = stack_a->next;
 		}
 		ft_printf("\n**********{----}**********\n");
+		//system("leaks push_swap");
 	}
 }

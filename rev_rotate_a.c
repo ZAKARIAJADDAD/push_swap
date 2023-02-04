@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:24:21 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 17:46:36 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/03 22:30:53 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	rev_rotate_a(t_list **head_a)
 	*head_a = snd_last_node->next;
 	snd_last_node->next = NULL;
 	(*head_a)->next = tmp;
-	write(1, "rra\n", 5);
+	write(1, "rra\n", 4);
 }

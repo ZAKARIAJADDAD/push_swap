@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:25:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/03 06:32:43 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/03 22:31:12 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	rotate_a(t_list **head_a)
 	*head_a = (*head_a)->next;
 	last_node->next = tmp;
 	tmp->next = NULL;
-	write(1, "ra\n", 4);
+	write(1, "ra\n", 3);
 }
 
 void	rr(t_list **head_a, t_list **head_b)
@@ -34,5 +34,5 @@ void	rr(t_list **head_a, t_list **head_b)
 		return ;
 	rotate_a(head_a);
 	rotate_b(head_b);
-	write(1, "rr\n", 4);
+	write(1, "rr\n", 3);
 }

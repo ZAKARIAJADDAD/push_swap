@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:03:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/03 06:13:53 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/03 23:17:35 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,12 @@ void	rrr(t_list **head_a, t_list **head_b);
 ////////////////////ACTIONS//////////////////////
 void	sort_three(t_list **stack_a);
 void	sort_five(t_list **stack_a, t_list **stack_b);
+void	quick_sort(t_list **stack_a);
+void	idx_stack_value(t_list **stack_a);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *s);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
-void	quick_sort(t_list **stack_a);
-void	ft_lstclear(t_list **lst);
 
 #endif

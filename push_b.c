@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:21:35 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 17:51:45 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/03 22:30:32 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	push_b(t_list **head_a, t_list **head_b)
 {
 	t_list	*tmp;
 
-	if (!(*head_a))
+	if (!head_a)
 		return ;
 	tmp = (*head_a)->next;
-	if (!(*head_b))
+	if (!head_b)
 		*head_b = ft_lstnew((*head_a)->data);
 	else
 	{
@@ -27,5 +27,5 @@ void	push_b(t_list **head_a, t_list **head_b)
 		*head_b = *head_a;
 	}
 	*head_a = tmp;
-	write(1, "pb\n", 4);
+	write(1, "pb\n", 3);
 }
