@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:38:16 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/03 05:48:19 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/06 21:07:03 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_three(t_list **stack_a)
 {
-	check_prams	val;
+	t_check_prams	val;
 
 	val.frst = (*stack_a)->data;
 	val.snd = (*stack_a)->next->data;

@@ -5,83 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 23:13:05 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/04 02:30:21 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/02/04 03:25:05 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/02/07 02:12:01 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort(int *sort, int n)
+void	sort_hundred(t_list **stack_a, t_list **stack_b)
 {
-    int i;
-	int	j;
-	int	temp;
-
-    i = 0;
-    while (i < n - 1) {
-        j = 0;
-        while (j < n - i - 1)
-		{
-            if (sort[j] > sort[j + 1])
-			{
-                temp = sort[j];
-                sort[j] = sort[j + 1];
-                sort[j + 1] = temp;
-            }
-            j++;
-        }
-        i++;
-    }
-}
-
-int	*get_sort_arr(t_list **stack_a)
-{
-	t_list	*iter;
-	int		*arr;
-	int		sz;
 	int		i;
+	int		lent;
+	int		count;
+	int		chunk;
 
-	i = 0;
-	sz = ft_lstsize(*stack_a);
-	arr = malloc(sz * sizeof(int));
-	if (!arr)
-		return(0);
-	iter = *stack_a;
-	while (iter)
+	lent = ft_lstsize(*stack_a);
+	chunk = 0;
+	count = 0;
+	while (*stack_a)
 	{
-		arr[i++] = iter->data;
-		iter = iter->next;
-	}
-	free(iter);
-	return (arr);
-}
-
-void	idx_stack_value(t_list **stack_a)
-{
-	t_list	*tmp;
-	int		*arr_sort;
-	int		i;
-	int		index;
-
-	i = 0;
-	index = 0;
-	tmp = *stack_a;
-	arr_sort = get_sort_arr(stack_a);
-	sort(arr_sort, ft_lstsize(*stack_a));
-	while (arr_sort[i])
-	{
-		while (tmp)
+		i = 0;
+		chunk += get_chunks(lent);
+		while (i <= (chunk - count))
 		{
-			if (arr_sort[i] == tmp->data)
+			if ((*stack_a)->idx >= count && (*stack_a)->idx <= chunk)
 			{
-				tmp->idx = index;
-				index++;
+				to_stack_b(stack_a, stack_b, (chunk + count) / 2);
+				i++;
+				lent--;
 			}
-			tmp = tmp->next;
+			else
+				rotate_a(stack_a);
 		}
-		tmp = *stack_a;
-		i++;
+		count = chunk + 1;
 	}
-	free(arr_sort);
 }

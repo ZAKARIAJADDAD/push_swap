@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 23:05:38 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/04 02:32:36 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/07 04:37:33 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,37 @@
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
-	t_list	*stack_b;
-
+	t_list	*stack_b = NULL;
+	t_list	*temp = NULL;
 	if (ac > 1)
 	{
 		check_param(av, &stack_a);
-		if (ft_lstsize(stack_a) == 1)
-		{
-			ft_printf("%d", stack_a->data);
+		idx_stack_value(&stack_a);
+		// temp = stack_a;
+		// while (temp)
+		// {
+		// 	ft_printf("%d --------> %d\n", temp->data, temp->idx);
+		// 	temp = temp->next;
+		// }
+		// ft_printf("**********{----}**********\n");
+		
+		if (check_order(&stack_a))
 			return (0);
-		}
+		if (ft_lstsize(stack_a) == 1)
+			return (0);
 		else if (ft_lstsize(stack_a) <= 3)
 			sort_three(&stack_a);
-		else if (ft_lstsize(stack_a) <= 5)
+		else if (ft_lstsize(stack_a) <= 10)
 			sort_five(&stack_a, &stack_b);
-		idx_stack_value(&stack_a);
-		ft_printf("**********{----}**********\n");
-		while (stack_a)
-		{
-			ft_printf("%d --------> %d\n", stack_a->data, stack_a->idx);
-			free(stack_a);
-			stack_a = stack_a->next;
-		}
-		ft_printf("\n**********{----}**********\n");
-		//system("leaks push_swap");
+		else if (ft_lstsize(stack_a) > 10)
+			sort_hundred(&stack_a, &stack_b);
+		
+		// while (stack_b)
+		// {
+		// 	ft_printf("{%d}	", stack_b->data);
+		// 	free(stack_b);
+		// 	stack_b = stack_b->next;
+		// }
+		system("leaks push_swap");
 	}
 }

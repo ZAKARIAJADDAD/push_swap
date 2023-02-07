@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:56:36 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/03 23:11:06 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/06 06:28:21 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ int	min_value(t_list *stack_a)
 		if (min > tmp->data)
 			min = tmp->data;
 		tmp = tmp->next;
-	}	
-	
+	}
 	tmp = stack_a;
 	while (tmp)
 	{
@@ -58,20 +57,41 @@ int	min_value(t_list *stack_a)
 	return (idx);
 }
 
+int	check_order(t_list **stack_a)
+{
+	t_list	*tmp;
+
+	tmp = *stack_a;
+	while (tmp->next)
+	{
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
 void	sort_five(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
 	int	min;
+	int	check;
 
 	i = 0;
 	min = 0;
-	while (i < 2)
+	check = ft_lstsize(*stack_a);
+	if (check > 5)
+		sort_ten(stack_a, stack_b);
+	else
 	{
-		min = min_value(*stack_a);
-		check_idx(stack_a, stack_b, min);
-		i++;
+		while (i < 2)
+		{
+			min = min_value(*stack_a);
+			check_idx(stack_a, stack_b, min);
+			i++;
+		}
+		sort_three(&(*stack_a));
+		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b);
 	}
-	sort_three(&(*stack_a));
-	push_a(stack_a, stack_b);
-	push_a(stack_a, stack_b);
 }

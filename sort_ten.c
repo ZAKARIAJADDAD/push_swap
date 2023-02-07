@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   sort_ten.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 15:06:20 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/22 02:05:14 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/02/06 06:07:06 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/02/07 01:29:51 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-size_t	ft_strlen(const char *s)
+void	sort_ten(t_list **stack_a, t_list **stack_b)
 {
-	size_t	i;
+	int	i;
+	int	sz;
 
 	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	sz = ft_lstsize(*stack_a);
+	while (*stack_a && i < sz)
+	{
+		if ((*stack_a)->idx == i)
+		{
+			push_b(stack_a, stack_b);
+			i++;
+		}
+		else
+			rotate_a(stack_a);
+	}
+	while (*stack_b)
+		push_a(stack_a, stack_b);
 }

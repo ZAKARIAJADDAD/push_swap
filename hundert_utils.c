@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_utils.c                                      :+:      :+:    :+:   */
+/*   hundert_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 02:21:49 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 17:52:31 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/02/07 02:10:36 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/02/07 02:13:16 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-char	*ft_strdup(const char *s1)
+void	to_stack_b(t_list **stack_a, t_list **stack_b, int mid_b)
 {
-	char	*plloc;
-	int		i;
+	t_list	*tmp;
 
-	i = 0;
-	plloc = malloc(ft_strlen(s1) + 1);
-	if (!plloc)
-		return (NULL);
-	while (s1[i])
-	{
-		plloc[i] = s1[i];
-		i++;
-	}
-	plloc[i] = '\0';
-	return (plloc);
+	push_b(stack_a, stack_b);
+	tmp = *stack_b;
+	if (tmp->idx < mid_b)
+		rotate_b(stack_b);
+}
+
+int	get_chunks(int size)
+{
+	if (size > 200)
+		return (size / 5);
+	else if (size > 100)
+		return (size / 4);
+	else if (size > 50)
+		return (size / 3);
+	else if (size > 10)
+		return (size / 2);
+	return (1);
 }
