@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 23:13:05 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/06 06:54:28 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/08 01:49:54 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	*get_sort_arr(t_list **stack_a)
 		iter = iter->next;
 	}
 	free(iter);
+	sort(arr, ft_lstsize(*stack_a));
 	return (arr);
 }
 
@@ -69,7 +70,6 @@ void	idx_stack_value(t_list **stack_a)
 	index = 0;
 	tmp = *stack_a;
 	arr_sort = get_sort_arr(stack_a);
-	sort(arr_sort, ft_lstsize(*stack_a));
 	while (i < ft_lstsize(*stack_a))
 	{
 		while (tmp)

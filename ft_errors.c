@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:42:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/06 06:56:39 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/07 05:06:28 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	param_error(void)
 {
-	write(2, "Error: Invalid Input.", 22);
+	write(2, "Error.\n", 7);
 	exit(1);
 }
 

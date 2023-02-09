@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:03:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/07 02:13:34 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/09 03:49:05 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,15 @@ typedef struct atoi
 
 typedef struct data
 {
-	int	i;
-	int	j;
-	int	frst;
-	int	snd;
-	int	trd;
+	int		i;
+	int		j;
+	int		frst;
+	int		snd;
+	int		trd;
+	int		k;
+	int		lent;
+	int		count;
+	int		chunk;
 }	t_check_prams;
 
 typedef struct push_swap
@@ -86,5 +90,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 int		get_chunks(int size);
 int		check_order(t_list **stack_a);
+int		*get_sort_arr(t_list **stack_a);
+void	big_sort(t_list **stack_a, t_list **stack_b, int *st_ord);
+void	push_to_stack_a(t_list **stack_a, t_list **stack_b, int location);
 
 #endif

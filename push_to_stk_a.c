@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hundert_utils.c                                    :+:      :+:    :+:   */
+/*   push_to_stk_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 02:10:36 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/09 04:38:03 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/02/09 01:34:18 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/02/09 04:41:01 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	to_stack_b(t_list **stack_a, t_list **stack_b, int mid_b)
+void	push_to_stack_a(t_list **stack_a, t_list **stack_b, int location)
 {
-	t_list	*tmp;
+	int	size;
 
-	push_b(stack_a, stack_b);
-	tmp = *stack_b;
-	if (tmp->idx < mid_b)
-		rotate_b(stack_b);
-}
-
-int	get_chunks(int check)
-{
-	if (check > 200)
-		return (check / 5);
-	else if (check > 100)
-		return (check / 4);
-	else if (check > 50)
-		return (check / 3);
-	else if (check > 10)
-		return (check / 2);
-	return (1);
+	size = ft_lstsize(*stack_b) - 1;
+	if (location <= size / 2)
+	{
+		while (location)
+		{
+			rotate_b(stack_b);
+			location--;
+		}
+		push_a(stack_a, stack_b);
+	}
+	if (location > size / 2)
+	{
+		while (location <= size)
+		{
+			rev_rotate_b(stack_b);
+			location++;
+		}
+		push_a(stack_a, stack_b);
+	}
 }
