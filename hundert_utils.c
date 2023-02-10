@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 02:10:36 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/09 04:38:03 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/10 21:29:14 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,53 @@ int	get_chunks(int check)
 	else if (check > 10)
 		return (check / 2);
 	return (1);
+}
+
+int	frst_bgr(t_list **head_b)
+{
+	t_list	*temp;
+	int		max;
+
+	temp = *head_b;
+	max = temp->data;
+	while (temp)
+	{
+		if (temp->data > max)
+			max = temp->data;
+		temp = temp->next;
+	}
+	return (max);
+}
+
+int	last_node(t_list *stack)
+{
+	t_list	*tmp;
+
+	tmp = stack;
+	while (tmp && tmp->next)
+		tmp = tmp->next;
+	return (tmp->data);
+}
+
+void	to_top_b(t_list **stack_b)
+{
+	int		size;
+	t_list	*stack_tmp;
+	int		index;
+	int		i;
+
+	i = 0;
+	stack_tmp = *stack_b;
+	size = ft_lstsize(*stack_b);
+	index = max_location(*stack_b);
+	if (index < (size / 2))
+	{
+		while (index-- > 0)
+			rotate_b(stack_b);
+	}
+	else
+	{
+		while (index++ < size)
+			rev_rotate_b(stack_b);
+	}
 }

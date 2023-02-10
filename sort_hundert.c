@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:25:05 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/09 05:06:40 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/10 14:49:29 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ void	sort_hundred(t_list **stack_a, t_list **stack_b)
 		dt.count = dt.chunk + 1;
 	}
 	big_sort(stack_a, stack_b, stack_a_ord);
-	//free(stack_a_ord);
 }

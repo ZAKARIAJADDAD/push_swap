@@ -5,71 +5,93 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 03:43:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/09 05:20:51 by zjaddad          ###   ########.fr       */
+/*   Created: 2023/02/10 18:53:38 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/02/10 21:32:29 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	frst_bgr(t_list **head_b, int bigger)
-{
-	int		mv;
-	t_list	*tmp;
-	
-	tmp = *head_b;
-	mv = 0;
-	while (tmp)
-	{
-		if (bigger == tmp->data)
-			break ;
-		tmp = tmp->next;
-		mv++;
-	}
-	return (mv);
-}
-
-int	stack_len(t_list **head_b)
-{
-	t_list	*tmp;
-	int		i;
-
-	tmp = *head_b;
-	i = 0;
-	while (tmp->next)
-	{
-		i++;
-		tmp =tmp->next;
-	}
-	return (i);
-}
-
-void	big_sort(t_list **stack_a, t_list **stack_b, int *st_ord)
+int	check_max_location(t_list *stack_b, int val_max)
 {
 	int	i;
-	// int	size;
-	int	moves;
-	int	moves1;
 
-	i = stack_len(stack_b);
-	//size = ft_lstsize(*stack_b);
-	while (*stack_b)
+	i = 0;
+	while (stack_b)
 	{
-		moves = frst_bgr(stack_b, st_ord[i]);
-		moves1 = frst_bgr(stack_b, st_ord[i - 10]);
-		if (moves > moves1)
+		if (stack_b->data == val_max)
+			return (i);
+		stack_b = stack_b -> next;
+	}
+	return (-1);
+}
+
+int	max_location(t_list *stack_b)
+{
+	t_list	*tmp;
+	int		index;
+	int		max;
+
+	index = 0;
+	tmp = stack_b;
+	max = frst_bgr(&tmp);
+	while (tmp)
+	{
+		if (tmp->data == max)
+			return (index);
+		index++;
+		tmp = tmp->next;
+	}
+	return (-1);
+}
+
+void	count_down(int count, t_list **stack_a)
+{
+	while (count > 0)
+	{
+		rev_rotate_a(stack_a);
+		count--;
+	}
+}
+
+void	push_to_a(t_list **stack_a, t_list **stack_b, t_big *dt, int *arr_srt)
+{
+	if (dt->idx != -1)
+	{
+		if ((*stack_b)->data == arr_srt[dt->i])
 		{
-			push_to_stack_a(stack_a, stack_b, moves1);
-			push_to_stack_a(stack_a, stack_b, moves);
-			i-=2;
+			push_a(stack_a, stack_b);
+			dt->i--;
+		}
+		else if (dt->count == 0
+			|| (*stack_b)->data > last_node(*stack_a))
+		{
+			push_a(stack_a, stack_b);
+			rotate_a(stack_a);
+			dt->count++;
 		}
 		else
-		{
-			push_to_stack_a(stack_a, stack_b, moves);
-			push_to_stack_a(stack_a, stack_b, moves1);
-			i-=2;
-		}
-		if ((*stack_a)->idx > (*stack_a)->next->idx)
-			swap_a(stack_a);
+			to_top_b(stack_b);
 	}
+	else
+	{
+		rev_rotate_a(stack_a);
+		dt->count--;
+		dt->i--;
+	}
+}
+
+void	big_sort(t_list **stack_a, t_list **stack_b, int *arr_srt)
+{
+	t_big	dt;
+
+	dt.i = ft_lstsize(*stack_b) - 1;
+	dt.count = 0;
+	while (*stack_b)
+	{
+		dt.idx = check_max_location(*stack_b, arr_srt[dt.i]);
+		push_to_a(stack_a, stack_b, &dt, arr_srt);
+	}
+	free(arr_srt);
+	count_down(dt.count, stack_a);
 }

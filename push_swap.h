@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:03:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/09 03:49:05 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/10 21:34:24 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@ typedef struct atoi
 
 }	t_ati;
 
+typedef struct s_bigger
+{
+	int	idx;
+	int	count;
+	int	i;
+}	t_big;
+
 typedef struct data
 {
 	int		i;
@@ -38,6 +45,7 @@ typedef struct data
 	int		lent;
 	int		count;
 	int		chunk;
+	int		size;
 }	t_check_prams;
 
 typedef struct push_swap
@@ -83,6 +91,8 @@ void	sort_ten(t_list **stack_a, t_list **stack_b);
 void	sort_hundred(t_list **stack_a, t_list **stack_b);
 void	idx_stack_value(t_list **stack_a);
 void	to_stack_b(t_list **stack_a, t_list **stack_b, int mid_b);
+void	big_sort(t_list **stack_a, t_list **stack_b, int	*arr_srt);
+void	to_top_b(t_list **stack_b);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *s);
 char	**ft_split(char const *s, char c);
@@ -91,7 +101,8 @@ char	*ft_strdup(const char *s1);
 int		get_chunks(int size);
 int		check_order(t_list **stack_a);
 int		*get_sort_arr(t_list **stack_a);
-void	big_sort(t_list **stack_a, t_list **stack_b, int *st_ord);
-void	push_to_stack_a(t_list **stack_a, t_list **stack_b, int location);
+int		frst_bgr(t_list **head_b);
+int		last_node(t_list *stack);
+int		max_location(t_list *stack_b);
 
 #endif
