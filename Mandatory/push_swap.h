@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:03:14 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/10 21:34:24 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/14 03:22:43 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include<stdlib.h>
 # include<limits.h>
 # include<stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 typedef struct atoi
 {
@@ -104,5 +108,18 @@ int		*get_sort_arr(t_list **stack_a);
 int		frst_bgr(t_list **head_b);
 int		last_node(t_list *stack);
 int		max_location(t_list *stack_b);
+///////////////////BONUS_ACTIONS///////////////////////////////////////
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ra(t_list **head_a);
+void	rb(t_list **head_b);
+void	pa(t_list **head_a, t_list **head_b);
+void	pb(t_list **head_a, t_list **head_b);
+void	rra(t_list **head_a);
+void	rrb(t_list **head_b);
+void	s_s(t_list **head_a, t_list **head_b);
+void	r_r(t_list **head_a, t_list **head_b);
+void	r_r_r(t_list **head_a, t_list **head_b);
+///////////////////BONUS_ACTIONS///////////////////////////////////////
 
 #endif

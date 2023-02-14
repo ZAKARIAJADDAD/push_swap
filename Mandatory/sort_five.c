@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:56:36 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/06 06:28:21 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/14 05:03:26 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,6 @@ int	min_value(t_list *stack_a)
 		tmp = tmp->next;
 	}
 	return (idx);
-}
-
-int	check_order(t_list **stack_a)
-{
-	t_list	*tmp;
-
-	tmp = *stack_a;
-	while (tmp->next)
-	{
-		if (tmp->data > tmp->next->data)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
 }
 
 void	sort_five(t_list **stack_a, t_list **stack_b)

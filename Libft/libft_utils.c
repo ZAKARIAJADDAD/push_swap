@@ -6,11 +6,11 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 02:21:49 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 17:52:31 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/13 20:23:41 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Mandatory/push_swap.h"
 
 char	*ft_strdup(const char *s1)
 {

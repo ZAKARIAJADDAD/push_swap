@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:42:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/07 05:06:28 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/14 05:03:09 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,18 @@ void	check_param(char **av, t_list **stk_a)
 		ft_free(splt);
 		dt.i++;
 	}
+}
+
+int	check_order(t_list **stack_a)
+{
+	t_list	*tmp;
+
+	tmp = *stack_a;
+	while (tmp->next)
+	{
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

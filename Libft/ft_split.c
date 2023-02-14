@@ -6,11 +6,11 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:15:26 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/30 15:56:47 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/13 20:23:23 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
+#include"../Mandatory/push_swap.h"
 
 static int	substr_count(char const *s, char c)
 {

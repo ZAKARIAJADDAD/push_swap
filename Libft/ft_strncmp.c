@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 15:06:20 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/13 20:23:28 by zjaddad          ###   ########.fr       */
+/*   Created: 2022/10/06 16:11:47 by zjaddad           #+#    #+#             */
+/*   Updated: 2023/02/14 04:44:21 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Mandatory/push_swap.h"
+#include "../Bonus/push_swap_bonus.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
 	i = 0;
-	while (s[i] != '\0')
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	while (i < n && (p1[i] != '\0' || p2[i] != '\0'))
+	{
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
 		i++;
-	return (i);
+	}
+	return (0);
 }

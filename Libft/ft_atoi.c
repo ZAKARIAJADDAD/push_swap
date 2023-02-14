@@ -6,11 +6,11 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 00:44:42 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/06 06:46:49 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/13 20:23:03 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Mandatory/push_swap.h"
 
 int	ft_atoi(const char *s)
 {

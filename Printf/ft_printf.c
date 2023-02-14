@@ -6,11 +6,11 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:05:29 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/03 01:52:34 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/13 20:24:12 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Mandatory/push_swap.h"
 
 int	check_arg(char c, va_list pr, int lent)
 {
