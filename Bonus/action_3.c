@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 02:15:47 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/14 05:00:19 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/14 23:34:55 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,10 @@ void	pa(t_list **head_a, t_list **head_b)
 		*head_a = *head_b;
 	}
 	*head_b = tmp;
+}
+
+void	print_ko(void)
+{
+	ft_printf("KO\n");
+	exit(1);
 }

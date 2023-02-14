@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:25:58 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/02/14 05:00:07 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/02/14 23:34:37 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_bzero(void *s, size_t n);
 
 /////////////////////////LIBFT_FUNCTIONS///////////////////////////////
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	print_ko(void);
 /////////////////////////LIBFT_FUNCTIONS///////////////////////////////
 
 #endif
